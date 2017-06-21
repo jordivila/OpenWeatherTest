@@ -1,0 +1,3 @@
+:host em {cursor: pointer;}
+:host em:not(.isOpen) {display:none;}
+:host em.isOpen {display:inline;}

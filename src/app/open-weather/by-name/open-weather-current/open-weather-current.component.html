@@ -1,0 +1,20 @@
+  <div class="row current-weather">
+    <div class="row title">
+      <div class="col-md-12">
+        <h4>
+          <span>Current</span>
+        </h4>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="openWeatherStore.error===null">
+      <div class="col-md-3" *ngFor="let item of openWeatherStore.cities">
+        <app-open-weather-item [item]="item"></app-open-weather-item>
+      </div>
+    </div>
+    <div class="row" *ngIf="openWeatherStore.error!==null">
+      <div class="col-md-12 has-error">
+        <div class="control-label">{{openWeatherStore.error}}</div>
+      </div>
+    </div>
+  </div>

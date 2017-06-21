@@ -1,0 +1,13 @@
+<div class="page-sidebar nav vertical animate">
+    <ul class="menu">
+        <li *ngFor="let item of items; let i = index">
+            <a [ngClass]="{'nav-arrow-first':item.selected}"
+                [routerLink]="[item.action]">
+
+                <i class="fa fa-{{item.icon}}"></i>
+                <span class="txt">{{item.title}}</span>
+
+            </a>
+        </li>
+    </ul>
+</div>

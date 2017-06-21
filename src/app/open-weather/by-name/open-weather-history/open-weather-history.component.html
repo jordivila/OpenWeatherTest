@@ -1,0 +1,25 @@
+<div class="row history-weather">
+  <div class="row title">
+    <div class="col-md-12">
+      <h4>
+        <app-toggle-button (onToggle)="historyToggle();" [isOpen]="isHistoryVisible"></app-toggle-button>
+        <span>History</span>
+      </h4>
+    </div>
+  </div>
+
+  <div class="container" [ngClass]="{'hidden': !isHistoryVisible}">
+    <div class="row history-item" *ngFor="let historyItem of openWeatherStore.history">
+      <div class="col-md-12">
+        <h5>{{historyItem.date | date: 'dd/MM/yyyy HH:mm:ss'}}</h5>
+      </div>
+      <div class="col-md-12">
+        <blockquote>
+          <div class="col-md-12" *ngFor="let historyItemDetail of historyItem.cities">
+            <app-open-weather-item [item]="historyItemDetail"></app-open-weather-item>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>

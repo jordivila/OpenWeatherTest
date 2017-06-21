@@ -1,0 +1,42 @@
+<app-loading></app-loading>
+
+<div class="jvn-dashboard" [ngClass]="{blurOverlay: isLoading}">
+
+    <app-toolbar></app-toolbar>
+
+    <div class="container jvn-dashboard-container animate" 
+        [ngClass]="{'menu-open': menuIsOpen, 'menu-close': !menuIsOpen}"
+        (window:resize)="onResize($event)">
+        <app-navbar></app-navbar>
+        <div class="page-container animate">
+            <div class="top-nav">
+                <div class="row">
+                    <div class="col-lg-6 col-md-4 col-sm-3 col-xs-4">
+                        <app-menu-toggle [isOpen]="menuIsOpen" (onToggle)="menuToggleClick($event)"></app-menu-toggle>
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-sm-9 col-xs-8">
+                        <div class="jvn-dashboard-top-actions">
+                            <div>
+
+                            </div>
+                            <div class="hidden-xs">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-content condensed">
+                <div class="content">
+                    <div class="jvn-dashboard-content">
+                        <main>
+                            <router-outlet></router-outlet>
+                        </main>
+                    </div>
+                </div>
+            </div>
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>

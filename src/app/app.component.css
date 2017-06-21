@@ -1,0 +1,4 @@
+.jvn-dashboard .jvn-dashboard-container .page-container .page-content {    min-height: 600px !important;}
+.jvn-dashboard-top-actions {  display: flex;  flex-direction: row;  flex-wrap: nowrap;  justify-content: flex-end;  align-content: stretch;  align-items: flex-start;}
+.jvn-dashboard-top-actions>div:nth-child(1) {  order: 0;  flex: 1 1 auto;  align-self: auto;}
+.jvn-dashboard-top-actions>div:nth-child(2) {  order: 0;  flex: 0 1 auto;  align-self: auto;}
